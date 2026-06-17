@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EmoPilot MOS Audio Gallery</title>
+  <meta name="description" content="Five representative EmoPilot MOS cases with GT, retrieved prompt, and generated speech audio." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Emotion category navigation" id="categoryNav"></nav>
+    <div class="hero-grid">
+      <section>
+        <p class="eyebrow">EmoPilot MOS Listening Set</p>
+        <h1>Emotion cue examples for zero-shot TTS</h1>
+        <p class="lede">
+          Five target-emotion cases selected for subjective MOS evaluation. Each case includes the paired
+          target audio reference, retrieved emotion prompts, and generated speech from the evaluated systems.
+        </p>
+      </section>
+      <aside class="summary-card" aria-label="Gallery summary">
+        <div><strong id="categoryCount">5</strong><span>emotion cases</span></div>
+        <div><strong id="retCount">5</strong><span>retrieved prompts per case</span></div>
+        <div><strong id="genCount">11</strong><span>generated outputs per case</span></div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="protocol" aria-labelledby="protocol-title">
+      <div>
+        <p class="eyebrow">Evaluation protocol</p>
+        <h2 id="protocol-title">Positive 1-5 MOS</h2>
+      </div>
+      <div class="protocol-grid">
+        <article>
+          <h3>R-MOS</h3>
+          <p>Score each <strong>retrieved prompt</strong> by emotional similarity to the paired GT reference. Ignore lexical mismatch.</p>
+        </article>
+        <article>
+          <h3>G-MOS</h3>
+          <p>Score each <strong>generated speech</strong> by emotional similarity to the paired GT reference and fit to the transcript.</p>
+        </article>
+        <article>
+          <h3>Scale</h3>
+          <p><strong>5</strong> very good match · <strong>3</strong> partial or ambiguous match · <strong>1</strong> unrelated or impossible to judge.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cases" class="cases" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>
+      Static GitHub Pages package. Audio paths are relative to this folder.
+      Metadata: <a href="emotion_transcript_table.csv">emotion_transcript_table.csv</a> ·
+      Manifest: <a href="audio_manifest.csv">audio_manifest.csv</a> ·
+      Scoring template: <a href="mos_scoring_template.csv">mos_scoring_template.csv</a> ·
+      Dataset: <a href="https://lab-msp.com/MSP/MSP-Podcast.html">MSP-Podcast official website</a>
+    </p>
+  </footer>
+
+  <script src="data/mos-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
