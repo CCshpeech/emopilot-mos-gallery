@@ -27,6 +27,7 @@ Same profile as the previous MOS package:
 Each category folder contains:
 
 - `GT.wav`: paired target audio used as the emotion reference.
+- `Audio0.wav`: source speaker prompt used by the zero-shot TTS systems.
 - `transcript.txt`: target transcript.
 - `ret/`: retrieved emotion prompt audios for R-MOS.
 - `gen/`: generated speech audios for G-MOS.

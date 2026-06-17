@@ -26,6 +26,7 @@
     if (type.includes('lower')) return 'lower';
     if (type.includes('direct')) return 'direct';
     if (type.includes('baseline') || name.includes('no emotion')) return 'baseline';
+    if (type.includes('speaker')) return 'speaker';
     if (type.includes('reference')) return 'reference';
     return '';
   }
@@ -55,6 +56,63 @@
     return section;
   }
 
+  function byFile(items) {
+    return new Map(items.map((item) => [item.file, item]));
+  }
+
+  function generationGroup(cat) {
+    const groups = [
+      {
+        title: 'EmoPilot prompt retrieval mode',
+        note: 'Generated with retrieved emotion prompt audio and IndexTTS2.',
+        files: ['LLM_VAD_gen.wav', 'VADPT_LLMVAD_gen.wav', 'TextAudioFFN_gen.wav', 'TextPromptTF_gen.wav'],
+      },
+      {
+        title: 'EmoPilot direct conditioning mode',
+        note: 'Generated with a predicted latent emotion embedding and IndexTTS2.',
+        files: ['VADPT_LLMVAD_Direct_gen.wav', 'TextPromptTF_Direct_gen.wav'],
+      },
+      {
+        title: 'No explicit emotion-cue baselines',
+        note: 'Generated from speaker/text inputs without an explicit retrieved or predicted emotion cue.',
+        files: ['IndexTTS2_SpeakerOnly_gen.wav', 'Qwen3TTS_gen.wav', 'FishAudio2_gen.wav'],
+      },
+      {
+        title: 'Lower bound',
+        note: 'Generated with a random retrieved prompt.',
+        files: ['Random_gen.wav'],
+      },
+      {
+        title: 'Oracle cue upper bound',
+        note: 'Generated with the paired GT target audio as the emotion prompt.',
+        files: ['IndexTTS2_GTReference_gen.wav'],
+      },
+    ];
+    const itemMap = byFile(cat.generation);
+    const section = document.createElement('section');
+    section.className = 'group generation-section';
+    section.innerHTML = `
+      <h3>Generated speech for G-MOS</h3>
+      <p class="group-note">Rate emotional similarity to GT and whether the emotion fits the transcript.</p>
+    `;
+    groups.forEach((spec) => {
+      const block = document.createElement('div');
+      block.className = 'subgroup';
+      block.innerHTML = `
+        <h4 class="subgroup-title">${escapeHtml(spec.title)}</h4>
+        <p class="subgroup-note">${escapeHtml(spec.note)}</p>
+        <div class="cards generation-grid"></div>
+      `;
+      const cards = $('.cards', block);
+      spec.files.forEach((file) => {
+        const item = itemMap.get(file);
+        if (item) cards.appendChild(audioCard(item));
+      });
+      section.appendChild(block);
+    });
+    return section;
+  }
+
   function renderCategory(cat, index) {
     const section = document.createElement('section');
     section.className = 'case-section';
@@ -79,21 +137,18 @@
       </div>
     `;
     section.appendChild(group(
-      'GT emotion reference',
-      'Participants should compare all R-MOS and G-MOS ratings against this paired target audio.',
-      [cat.reference],
-      'reference',
+      'GT and Audio0 references',
+      'Use GT as the emotion target. Audio0 is the source speaker prompt used by the zero-shot TTS systems.',
+      [cat.reference, cat.audio0],
+      'reference reference-duo',
     ));
     section.appendChild(group(
       'Retrieved emotion prompts for R-MOS',
       'Prompt audio does not need to match the transcript content. Rate emotional similarity and speaking style relative to GT.',
       cat.retrieval,
+      'retrieval-grid',
     ));
-    section.appendChild(group(
-      'Generated speech for G-MOS',
-      'Rate emotional similarity to GT and whether the emotion fits the transcript.',
-      cat.generation,
-    ));
+    section.appendChild(generationGroup(cat));
     return section;
   }
 

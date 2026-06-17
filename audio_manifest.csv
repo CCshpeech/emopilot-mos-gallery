@@ -89,3 +89,8 @@ category_folder,eval_category,artifact_group,condition,filename,relative_path,so
 05_Neutral,Neutral,gen,VAD-Transformer Direct + IndexTTS2,VADPT_LLMVAD_Direct_gen.wav,05_Neutral/gen/VADPT_LLMVAD_Direct_gen.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/092_MSP-PODCAST_0285_0919/gen/VADPT_LLMVAD_Direct_gen.wav
 05_Neutral,Neutral,gen,Text-Prompt Transformer Direct + IndexTTS2,TextPromptTF_Direct_gen.wav,05_Neutral/gen/TextPromptTF_Direct_gen.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/092_MSP-PODCAST_0285_0919/gen/TextPromptTF_Direct_gen.wav
 05_Neutral,Neutral,gen,GT Emotion Prompt + IndexTTS2 upper bound,IndexTTS2_GTReference_gen.wav,05_Neutral/gen/IndexTTS2_GTReference_gen.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/092_MSP-PODCAST_0285_0919/gen/IndexTTS2_GTReference_gen.wav
+01_Happy,Happy,reference,Audio0 speaker reference,Audio0.wav,01_Happy/Audio0.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/000_MSP-PODCAST_3231_1607/Audio0.wav
+02_Angry,Angry,reference,Audio0 speaker reference,Audio0.wav,02_Angry/Audio0.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/029_MSP-PODCAST_4042_0190_0001/Audio0.wav
+03_Sad,Sad,reference,Audio0 speaker reference,Audio0.wav,03_Sad/Audio0.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/030_MSP-PODCAST_4441_0055/Audio0.wav
+04_LowMood_MSPFear,Low mood,reference,Audio0 speaker reference,Audio0.wav,04_LowMood_MSPFear/Audio0.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/072_MSP-PODCAST_2412_0068/Audio0.wav
+05_Neutral,Neutral,reference,Audio0 speaker reference,Audio0.wav,05_Neutral/Audio0.wav,/Users/changliankezhan/Desktop/投稿/slt2026/pairs_96/092_MSP-PODCAST_0285_0919/Audio0.wav

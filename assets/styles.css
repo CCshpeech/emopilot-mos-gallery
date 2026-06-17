@@ -233,7 +233,45 @@ main {
   grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 14px;
 }
-.cards.reference { grid-template-columns: minmax(260px, 520px); }
+.cards.reference-duo {
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  max-width: 980px;
+}
+.cards.retrieval-grid {
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  max-width: 980px;
+}
+.cards.retrieval-grid .audio-card:nth-child(5) {
+  grid-column: 1 / 2;
+}
+.generation-section {
+  display: grid;
+  gap: 18px;
+}
+.generation-section > h3,
+.generation-section > .group-note {
+  margin-bottom: 0;
+}
+.subgroup {
+  padding: 14px;
+  border: 1px solid rgba(24, 33, 31, 0.10);
+  border-radius: 24px;
+  background: rgba(255, 252, 243, 0.40);
+}
+.subgroup-title {
+  margin: 0 0 4px;
+  font-family: "Baskerville", "Georgia", serif;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+}
+.subgroup-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.cards.generation-grid {
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+}
 .audio-card {
   position: relative;
   min-height: 100%;
@@ -252,6 +290,7 @@ main {
   opacity: 0.78;
 }
 .audio-card.reference::before { background: var(--ochre); }
+.audio-card.speaker::before { background: var(--blue); }
 .audio-card.lower::before { background: #616a70; }
 .audio-card.direct::before { background: var(--plum); }
 .audio-card.baseline::before { background: var(--blue); }
@@ -291,6 +330,15 @@ footer a { color: var(--forest); font-weight: 900; }
   .protocol-grid,
   .cards {
     grid-template-columns: 1fr;
+  }
+  .cards.reference-duo,
+  .cards.retrieval-grid,
+  .cards.generation-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+  .cards.retrieval-grid .audio-card:nth-child(5) {
+    grid-column: auto;
   }
   .topbar { align-self: stretch; border-radius: 24px; }
 }

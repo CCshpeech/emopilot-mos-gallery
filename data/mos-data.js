@@ -62,83 +62,90 @@ window.EMOPILOT_MOS_DATA = {
       ],
       "generation": [
         {
-          "name": "IndexTTS2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "Speaker prompt only.",
-          "file": "IndexTTS2_SpeakerOnly_gen.wav",
-          "src": "01_Happy/gen/IndexTTS2_SpeakerOnly_gen.wav"
-        },
-        {
-          "name": "Qwen3-TTS no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "Qwen3TTS_gen.wav",
-          "src": "01_Happy/gen/Qwen3TTS_gen.wav"
-        },
-        {
-          "name": "FishAudio2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "FishAudio2_gen.wav",
-          "src": "01_Happy/gen/FishAudio2_gen.wav"
-        },
-        {
-          "name": "Random prompt + IndexTTS2",
-          "type": "Lower bound",
-          "note": "IndexTTS2 conditioned on random prompt.",
-          "file": "Random_gen.wav",
-          "src": "01_Happy/gen/Random_gen.wav"
-        },
-        {
-          "name": "LLM-VAD nearest + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using LLM-VAD retrieved emotion prompt.",
+          "name": "LLM-VAD Nearest Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using LLM-VAD nearest retrieved emotion prompt.",
           "file": "LLM_VAD_gen.wav",
           "src": "01_Happy/gen/LLM_VAD_gen.wav"
         },
         {
-          "name": "VAD-Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
+          "name": "VAD-Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using VAD-transformer retrieved emotion prompt.",
           "file": "VADPT_LLMVAD_gen.wav",
           "src": "01_Happy/gen/VADPT_LLMVAD_gen.wav"
         },
         {
-          "name": "Text-Audio FFN + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using Text-Audio FFN prompt.",
+          "name": "Text-Audio FFN Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using Text-Audio FFN retrieved emotion prompt.",
           "file": "TextAudioFFN_gen.wav",
           "src": "01_Happy/gen/TextAudioFFN_gen.wav"
         },
         {
-          "name": "Text-Prompt Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using text-prompt transformer prompt.",
+          "name": "Text-Prompt Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using text-prompt transformer retrieved emotion prompt.",
           "file": "TextPromptTF_gen.wav",
           "src": "01_Happy/gen/TextPromptTF_gen.wav"
         },
         {
-          "name": "VAD-Transformer direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted VAD-conditioned emotion embedding.",
+          "name": "VAD-Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from VAD-transformer predicted emotion embedding.",
           "file": "VADPT_LLMVAD_Direct_gen.wav",
           "src": "01_Happy/gen/VADPT_LLMVAD_Direct_gen.wav"
         },
         {
-          "name": "Text-Prompt direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted text-conditioned emotion embedding.",
+          "name": "Text-Prompt Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from text-prompt transformer predicted emotion embedding.",
           "file": "TextPromptTF_Direct_gen.wav",
           "src": "01_Happy/gen/TextPromptTF_Direct_gen.wav"
         },
         {
-          "name": "GT emotion prompt + IndexTTS2",
-          "type": "Oracle upper bound",
-          "note": "Uses paired GT audio as emotion prompt.",
+          "name": "IndexTTS2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "Speaker prompt only; no explicit emotion cue.",
+          "file": "IndexTTS2_SpeakerOnly_gen.wav",
+          "src": "01_Happy/gen/IndexTTS2_SpeakerOnly_gen.wav"
+        },
+        {
+          "name": "Qwen3-TTS-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "Qwen3TTS_gen.wav",
+          "src": "01_Happy/gen/Qwen3TTS_gen.wav"
+        },
+        {
+          "name": "FishAudio2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "FishAudio2_gen.wav",
+          "src": "01_Happy/gen/FishAudio2_gen.wav"
+        },
+        {
+          "name": "Random Prompt + IndexTTS2",
+          "type": "Lower bound",
+          "note": "IndexTTS2 conditioned on random retrieved prompt.",
+          "file": "Random_gen.wav",
+          "src": "01_Happy/gen/Random_gen.wav"
+        },
+        {
+          "name": "GT Emotion Prompt + IndexTTS2",
+          "type": "Oracle cue upper bound",
+          "note": "Uses paired GT audio as the emotion prompt.",
           "file": "IndexTTS2_GTReference_gen.wav",
           "src": "01_Happy/gen/IndexTTS2_GTReference_gen.wav"
         }
-      ]
+      ],
+      "audio0": {
+        "name": "Audio0 speaker reference",
+        "type": "Speaker reference",
+        "note": "Source speaker prompt used to anchor speaker identity.",
+        "src": "01_Happy/Audio0.wav",
+        "file": "Audio0.wav"
+      }
     },
     {
       "id": "02_Angry",
@@ -200,83 +207,90 @@ window.EMOPILOT_MOS_DATA = {
       ],
       "generation": [
         {
-          "name": "IndexTTS2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "Speaker prompt only.",
-          "file": "IndexTTS2_SpeakerOnly_gen.wav",
-          "src": "02_Angry/gen/IndexTTS2_SpeakerOnly_gen.wav"
-        },
-        {
-          "name": "Qwen3-TTS no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "Qwen3TTS_gen.wav",
-          "src": "02_Angry/gen/Qwen3TTS_gen.wav"
-        },
-        {
-          "name": "FishAudio2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "FishAudio2_gen.wav",
-          "src": "02_Angry/gen/FishAudio2_gen.wav"
-        },
-        {
-          "name": "Random prompt + IndexTTS2",
-          "type": "Lower bound",
-          "note": "IndexTTS2 conditioned on random prompt.",
-          "file": "Random_gen.wav",
-          "src": "02_Angry/gen/Random_gen.wav"
-        },
-        {
-          "name": "LLM-VAD nearest + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using LLM-VAD retrieved emotion prompt.",
+          "name": "LLM-VAD Nearest Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using LLM-VAD nearest retrieved emotion prompt.",
           "file": "LLM_VAD_gen.wav",
           "src": "02_Angry/gen/LLM_VAD_gen.wav"
         },
         {
-          "name": "VAD-Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
+          "name": "VAD-Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using VAD-transformer retrieved emotion prompt.",
           "file": "VADPT_LLMVAD_gen.wav",
           "src": "02_Angry/gen/VADPT_LLMVAD_gen.wav"
         },
         {
-          "name": "Text-Audio FFN + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using Text-Audio FFN prompt.",
+          "name": "Text-Audio FFN Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using Text-Audio FFN retrieved emotion prompt.",
           "file": "TextAudioFFN_gen.wav",
           "src": "02_Angry/gen/TextAudioFFN_gen.wav"
         },
         {
-          "name": "Text-Prompt Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using text-prompt transformer prompt.",
+          "name": "Text-Prompt Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using text-prompt transformer retrieved emotion prompt.",
           "file": "TextPromptTF_gen.wav",
           "src": "02_Angry/gen/TextPromptTF_gen.wav"
         },
         {
-          "name": "VAD-Transformer direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted VAD-conditioned emotion embedding.",
+          "name": "VAD-Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from VAD-transformer predicted emotion embedding.",
           "file": "VADPT_LLMVAD_Direct_gen.wav",
           "src": "02_Angry/gen/VADPT_LLMVAD_Direct_gen.wav"
         },
         {
-          "name": "Text-Prompt direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted text-conditioned emotion embedding.",
+          "name": "Text-Prompt Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from text-prompt transformer predicted emotion embedding.",
           "file": "TextPromptTF_Direct_gen.wav",
           "src": "02_Angry/gen/TextPromptTF_Direct_gen.wav"
         },
         {
-          "name": "GT emotion prompt + IndexTTS2",
-          "type": "Oracle upper bound",
-          "note": "Uses paired GT audio as emotion prompt.",
+          "name": "IndexTTS2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "Speaker prompt only; no explicit emotion cue.",
+          "file": "IndexTTS2_SpeakerOnly_gen.wav",
+          "src": "02_Angry/gen/IndexTTS2_SpeakerOnly_gen.wav"
+        },
+        {
+          "name": "Qwen3-TTS-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "Qwen3TTS_gen.wav",
+          "src": "02_Angry/gen/Qwen3TTS_gen.wav"
+        },
+        {
+          "name": "FishAudio2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "FishAudio2_gen.wav",
+          "src": "02_Angry/gen/FishAudio2_gen.wav"
+        },
+        {
+          "name": "Random Prompt + IndexTTS2",
+          "type": "Lower bound",
+          "note": "IndexTTS2 conditioned on random retrieved prompt.",
+          "file": "Random_gen.wav",
+          "src": "02_Angry/gen/Random_gen.wav"
+        },
+        {
+          "name": "GT Emotion Prompt + IndexTTS2",
+          "type": "Oracle cue upper bound",
+          "note": "Uses paired GT audio as the emotion prompt.",
           "file": "IndexTTS2_GTReference_gen.wav",
           "src": "02_Angry/gen/IndexTTS2_GTReference_gen.wav"
         }
-      ]
+      ],
+      "audio0": {
+        "name": "Audio0 speaker reference",
+        "type": "Speaker reference",
+        "note": "Source speaker prompt used to anchor speaker identity.",
+        "src": "02_Angry/Audio0.wav",
+        "file": "Audio0.wav"
+      }
     },
     {
       "id": "03_Sad",
@@ -338,83 +352,90 @@ window.EMOPILOT_MOS_DATA = {
       ],
       "generation": [
         {
-          "name": "IndexTTS2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "Speaker prompt only.",
-          "file": "IndexTTS2_SpeakerOnly_gen.wav",
-          "src": "03_Sad/gen/IndexTTS2_SpeakerOnly_gen.wav"
-        },
-        {
-          "name": "Qwen3-TTS no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "Qwen3TTS_gen.wav",
-          "src": "03_Sad/gen/Qwen3TTS_gen.wav"
-        },
-        {
-          "name": "FishAudio2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "FishAudio2_gen.wav",
-          "src": "03_Sad/gen/FishAudio2_gen.wav"
-        },
-        {
-          "name": "Random prompt + IndexTTS2",
-          "type": "Lower bound",
-          "note": "IndexTTS2 conditioned on random prompt.",
-          "file": "Random_gen.wav",
-          "src": "03_Sad/gen/Random_gen.wav"
-        },
-        {
-          "name": "LLM-VAD nearest + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using LLM-VAD retrieved emotion prompt.",
+          "name": "LLM-VAD Nearest Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using LLM-VAD nearest retrieved emotion prompt.",
           "file": "LLM_VAD_gen.wav",
           "src": "03_Sad/gen/LLM_VAD_gen.wav"
         },
         {
-          "name": "VAD-Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
+          "name": "VAD-Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using VAD-transformer retrieved emotion prompt.",
           "file": "VADPT_LLMVAD_gen.wav",
           "src": "03_Sad/gen/VADPT_LLMVAD_gen.wav"
         },
         {
-          "name": "Text-Audio FFN + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using Text-Audio FFN prompt.",
+          "name": "Text-Audio FFN Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using Text-Audio FFN retrieved emotion prompt.",
           "file": "TextAudioFFN_gen.wav",
           "src": "03_Sad/gen/TextAudioFFN_gen.wav"
         },
         {
-          "name": "Text-Prompt Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using text-prompt transformer prompt.",
+          "name": "Text-Prompt Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using text-prompt transformer retrieved emotion prompt.",
           "file": "TextPromptTF_gen.wav",
           "src": "03_Sad/gen/TextPromptTF_gen.wav"
         },
         {
-          "name": "VAD-Transformer direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted VAD-conditioned emotion embedding.",
+          "name": "VAD-Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from VAD-transformer predicted emotion embedding.",
           "file": "VADPT_LLMVAD_Direct_gen.wav",
           "src": "03_Sad/gen/VADPT_LLMVAD_Direct_gen.wav"
         },
         {
-          "name": "Text-Prompt direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted text-conditioned emotion embedding.",
+          "name": "Text-Prompt Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from text-prompt transformer predicted emotion embedding.",
           "file": "TextPromptTF_Direct_gen.wav",
           "src": "03_Sad/gen/TextPromptTF_Direct_gen.wav"
         },
         {
-          "name": "GT emotion prompt + IndexTTS2",
-          "type": "Oracle upper bound",
-          "note": "Uses paired GT audio as emotion prompt.",
+          "name": "IndexTTS2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "Speaker prompt only; no explicit emotion cue.",
+          "file": "IndexTTS2_SpeakerOnly_gen.wav",
+          "src": "03_Sad/gen/IndexTTS2_SpeakerOnly_gen.wav"
+        },
+        {
+          "name": "Qwen3-TTS-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "Qwen3TTS_gen.wav",
+          "src": "03_Sad/gen/Qwen3TTS_gen.wav"
+        },
+        {
+          "name": "FishAudio2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "FishAudio2_gen.wav",
+          "src": "03_Sad/gen/FishAudio2_gen.wav"
+        },
+        {
+          "name": "Random Prompt + IndexTTS2",
+          "type": "Lower bound",
+          "note": "IndexTTS2 conditioned on random retrieved prompt.",
+          "file": "Random_gen.wav",
+          "src": "03_Sad/gen/Random_gen.wav"
+        },
+        {
+          "name": "GT Emotion Prompt + IndexTTS2",
+          "type": "Oracle cue upper bound",
+          "note": "Uses paired GT audio as the emotion prompt.",
           "file": "IndexTTS2_GTReference_gen.wav",
           "src": "03_Sad/gen/IndexTTS2_GTReference_gen.wav"
         }
-      ]
+      ],
+      "audio0": {
+        "name": "Audio0 speaker reference",
+        "type": "Speaker reference",
+        "note": "Source speaker prompt used to anchor speaker identity.",
+        "src": "03_Sad/Audio0.wav",
+        "file": "Audio0.wav"
+      }
     },
     {
       "id": "04_LowMood_MSPFear",
@@ -476,83 +497,90 @@ window.EMOPILOT_MOS_DATA = {
       ],
       "generation": [
         {
-          "name": "IndexTTS2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "Speaker prompt only.",
-          "file": "IndexTTS2_SpeakerOnly_gen.wav",
-          "src": "04_LowMood_MSPFear/gen/IndexTTS2_SpeakerOnly_gen.wav"
-        },
-        {
-          "name": "Qwen3-TTS no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "Qwen3TTS_gen.wav",
-          "src": "04_LowMood_MSPFear/gen/Qwen3TTS_gen.wav"
-        },
-        {
-          "name": "FishAudio2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "FishAudio2_gen.wav",
-          "src": "04_LowMood_MSPFear/gen/FishAudio2_gen.wav"
-        },
-        {
-          "name": "Random prompt + IndexTTS2",
-          "type": "Lower bound",
-          "note": "IndexTTS2 conditioned on random prompt.",
-          "file": "Random_gen.wav",
-          "src": "04_LowMood_MSPFear/gen/Random_gen.wav"
-        },
-        {
-          "name": "LLM-VAD nearest + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using LLM-VAD retrieved emotion prompt.",
+          "name": "LLM-VAD Nearest Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using LLM-VAD nearest retrieved emotion prompt.",
           "file": "LLM_VAD_gen.wav",
           "src": "04_LowMood_MSPFear/gen/LLM_VAD_gen.wav"
         },
         {
-          "name": "VAD-Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
+          "name": "VAD-Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using VAD-transformer retrieved emotion prompt.",
           "file": "VADPT_LLMVAD_gen.wav",
           "src": "04_LowMood_MSPFear/gen/VADPT_LLMVAD_gen.wav"
         },
         {
-          "name": "Text-Audio FFN + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using Text-Audio FFN prompt.",
+          "name": "Text-Audio FFN Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using Text-Audio FFN retrieved emotion prompt.",
           "file": "TextAudioFFN_gen.wav",
           "src": "04_LowMood_MSPFear/gen/TextAudioFFN_gen.wav"
         },
         {
-          "name": "Text-Prompt Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using text-prompt transformer prompt.",
+          "name": "Text-Prompt Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using text-prompt transformer retrieved emotion prompt.",
           "file": "TextPromptTF_gen.wav",
           "src": "04_LowMood_MSPFear/gen/TextPromptTF_gen.wav"
         },
         {
-          "name": "VAD-Transformer direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted VAD-conditioned emotion embedding.",
+          "name": "VAD-Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from VAD-transformer predicted emotion embedding.",
           "file": "VADPT_LLMVAD_Direct_gen.wav",
           "src": "04_LowMood_MSPFear/gen/VADPT_LLMVAD_Direct_gen.wav"
         },
         {
-          "name": "Text-Prompt direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted text-conditioned emotion embedding.",
+          "name": "Text-Prompt Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from text-prompt transformer predicted emotion embedding.",
           "file": "TextPromptTF_Direct_gen.wav",
           "src": "04_LowMood_MSPFear/gen/TextPromptTF_Direct_gen.wav"
         },
         {
-          "name": "GT emotion prompt + IndexTTS2",
-          "type": "Oracle upper bound",
-          "note": "Uses paired GT audio as emotion prompt.",
+          "name": "IndexTTS2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "Speaker prompt only; no explicit emotion cue.",
+          "file": "IndexTTS2_SpeakerOnly_gen.wav",
+          "src": "04_LowMood_MSPFear/gen/IndexTTS2_SpeakerOnly_gen.wav"
+        },
+        {
+          "name": "Qwen3-TTS-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "Qwen3TTS_gen.wav",
+          "src": "04_LowMood_MSPFear/gen/Qwen3TTS_gen.wav"
+        },
+        {
+          "name": "FishAudio2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "FishAudio2_gen.wav",
+          "src": "04_LowMood_MSPFear/gen/FishAudio2_gen.wav"
+        },
+        {
+          "name": "Random Prompt + IndexTTS2",
+          "type": "Lower bound",
+          "note": "IndexTTS2 conditioned on random retrieved prompt.",
+          "file": "Random_gen.wav",
+          "src": "04_LowMood_MSPFear/gen/Random_gen.wav"
+        },
+        {
+          "name": "GT Emotion Prompt + IndexTTS2",
+          "type": "Oracle cue upper bound",
+          "note": "Uses paired GT audio as the emotion prompt.",
           "file": "IndexTTS2_GTReference_gen.wav",
           "src": "04_LowMood_MSPFear/gen/IndexTTS2_GTReference_gen.wav"
         }
-      ]
+      ],
+      "audio0": {
+        "name": "Audio0 speaker reference",
+        "type": "Speaker reference",
+        "note": "Source speaker prompt used to anchor speaker identity.",
+        "src": "04_LowMood_MSPFear/Audio0.wav",
+        "file": "Audio0.wav"
+      }
     },
     {
       "id": "05_Neutral",
@@ -614,83 +642,90 @@ window.EMOPILOT_MOS_DATA = {
       ],
       "generation": [
         {
-          "name": "IndexTTS2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "Speaker prompt only.",
-          "file": "IndexTTS2_SpeakerOnly_gen.wav",
-          "src": "05_Neutral/gen/IndexTTS2_SpeakerOnly_gen.wav"
-        },
-        {
-          "name": "Qwen3-TTS no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "Qwen3TTS_gen.wav",
-          "src": "05_Neutral/gen/Qwen3TTS_gen.wav"
-        },
-        {
-          "name": "FishAudio2 no emotion",
-          "type": "No-emotion baseline",
-          "note": "External speaker-cloning baseline.",
-          "file": "FishAudio2_gen.wav",
-          "src": "05_Neutral/gen/FishAudio2_gen.wav"
-        },
-        {
-          "name": "Random prompt + IndexTTS2",
-          "type": "Lower bound",
-          "note": "IndexTTS2 conditioned on random prompt.",
-          "file": "Random_gen.wav",
-          "src": "05_Neutral/gen/Random_gen.wav"
-        },
-        {
-          "name": "LLM-VAD nearest + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using LLM-VAD retrieved emotion prompt.",
+          "name": "LLM-VAD Nearest Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using LLM-VAD nearest retrieved emotion prompt.",
           "file": "LLM_VAD_gen.wav",
           "src": "05_Neutral/gen/LLM_VAD_gen.wav"
         },
         {
-          "name": "VAD-Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
+          "name": "VAD-Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using VAD-transformer retrieved emotion prompt.",
           "file": "VADPT_LLMVAD_gen.wav",
           "src": "05_Neutral/gen/VADPT_LLMVAD_gen.wav"
         },
         {
-          "name": "Text-Audio FFN + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using Text-Audio FFN prompt.",
+          "name": "Text-Audio FFN Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using Text-Audio FFN retrieved emotion prompt.",
           "file": "TextAudioFFN_gen.wav",
           "src": "05_Neutral/gen/TextAudioFFN_gen.wav"
         },
         {
-          "name": "Text-Prompt Transformer + IndexTTS2",
-          "type": "Prompt retrieval generation",
-          "note": "Generated speech using text-prompt transformer prompt.",
+          "name": "Text-Prompt Transformer Retrieval + IndexTTS2",
+          "type": "EmoPilot prompt retrieval mode",
+          "note": "Generated speech using text-prompt transformer retrieved emotion prompt.",
           "file": "TextPromptTF_gen.wav",
           "src": "05_Neutral/gen/TextPromptTF_gen.wav"
         },
         {
-          "name": "VAD-Transformer direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted VAD-conditioned emotion embedding.",
+          "name": "VAD-Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from VAD-transformer predicted emotion embedding.",
           "file": "VADPT_LLMVAD_Direct_gen.wav",
           "src": "05_Neutral/gen/VADPT_LLMVAD_Direct_gen.wav"
         },
         {
-          "name": "Text-Prompt direct + IndexTTS2",
-          "type": "Direct conditioning",
-          "note": "Generated from predicted text-conditioned emotion embedding.",
+          "name": "Text-Prompt Transformer Direct + IndexTTS2",
+          "type": "EmoPilot direct conditioning mode",
+          "note": "Generated from text-prompt transformer predicted emotion embedding.",
           "file": "TextPromptTF_Direct_gen.wav",
           "src": "05_Neutral/gen/TextPromptTF_Direct_gen.wav"
         },
         {
-          "name": "GT emotion prompt + IndexTTS2",
-          "type": "Oracle upper bound",
-          "note": "Uses paired GT audio as emotion prompt.",
+          "name": "IndexTTS2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "Speaker prompt only; no explicit emotion cue.",
+          "file": "IndexTTS2_SpeakerOnly_gen.wav",
+          "src": "05_Neutral/gen/IndexTTS2_SpeakerOnly_gen.wav"
+        },
+        {
+          "name": "Qwen3-TTS-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "Qwen3TTS_gen.wav",
+          "src": "05_Neutral/gen/Qwen3TTS_gen.wav"
+        },
+        {
+          "name": "FishAudio2-NoEmotion",
+          "type": "No explicit emotion-cue baseline",
+          "note": "External speaker-cloning baseline without explicit emotion cue.",
+          "file": "FishAudio2_gen.wav",
+          "src": "05_Neutral/gen/FishAudio2_gen.wav"
+        },
+        {
+          "name": "Random Prompt + IndexTTS2",
+          "type": "Lower bound",
+          "note": "IndexTTS2 conditioned on random retrieved prompt.",
+          "file": "Random_gen.wav",
+          "src": "05_Neutral/gen/Random_gen.wav"
+        },
+        {
+          "name": "GT Emotion Prompt + IndexTTS2",
+          "type": "Oracle cue upper bound",
+          "note": "Uses paired GT audio as the emotion prompt.",
           "file": "IndexTTS2_GTReference_gen.wav",
           "src": "05_Neutral/gen/IndexTTS2_GTReference_gen.wav"
         }
-      ]
+      ],
+      "audio0": {
+        "name": "Audio0 speaker reference",
+        "type": "Speaker reference",
+        "note": "Source speaker prompt used to anchor speaker identity.",
+        "src": "05_Neutral/Audio0.wav",
+        "file": "Audio0.wav"
+      }
     }
   ],
   "counts": {
