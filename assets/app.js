@@ -161,7 +161,7 @@
   data.categories.forEach((cat, index) => {
     const link = document.createElement('a');
     link.href = `#${cat.id}`;
-    link.textContent = cat.display.replace(' (MSP Fear)', '');
+    link.textContent = cat.display;
     navEl.appendChild(link);
     casesEl.appendChild(renderCategory(cat, index));
   });
