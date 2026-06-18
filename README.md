@@ -9,10 +9,10 @@ The five listening categories are:
 1. `01_Happy`
 2. `02_Angry`
 3. `03_Sad`
-4. `04_Exciting_MSPAngry`
+4. `04_Frustrated_MSPAngry`
 5. `05_Neutral`
 
-`04_Exciting_MSPAngry` is presented as Exciting for the listening test. The paired GT audio is originally labeled `A` (Angry) in MSP-Podcast, with arousal/valence/dominance values 6.2/2.6/5.6.
+`04_Frustrated_MSPAngry` is presented as Frustrated for the listening test. The paired GT audio is originally labeled `A` (Angry) in MSP-Podcast, with arousal/valence/dominance values 6.2/2.6/5.6.
 
 ## Participant Profile
 

@@ -438,8 +438,8 @@ window.EMOPILOT_MOS_DATA = {
       }
     },
     {
-      "id": "04_Exciting_MSPAngry",
-      "display": "Exciting",
+      "id": "04_Frustrated_MSPAngry",
+      "display": "Frustrated",
       "sourceFolder": "064_MSP-PODCAST_4180_0006_0000",
       "queryIdx": "64",
       "fileName0": "MSP-PODCAST_4180_0006_0000.wav",
@@ -455,7 +455,7 @@ window.EMOPILOT_MOS_DATA = {
         "name": "GT target audio",
         "type": "Reference",
         "note": "Paired target audio used as emotion reference.",
-        "src": "04_Exciting_MSPAngry/GT.wav",
+        "src": "04_Frustrated_MSPAngry/GT.wav",
         "file": "GT.wav"
       },
       "retrieval": [
@@ -464,35 +464,35 @@ window.EMOPILOT_MOS_DATA = {
           "type": "Prompt retrieval",
           "note": "LLM-predicted VAD nearest prompt.",
           "file": "LLM_VAD_ret.wav",
-          "src": "04_Exciting_MSPAngry/ret/LLM_VAD_ret.wav"
+          "src": "04_Frustrated_MSPAngry/ret/LLM_VAD_ret.wav"
         },
         {
           "name": "VAD-Transformer",
           "type": "Prompt retrieval",
           "note": "Audio0 + LLM-VAD transformer retrieved prompt.",
           "file": "VADPT_LLMVAD_ret.wav",
-          "src": "04_Exciting_MSPAngry/ret/VADPT_LLMVAD_ret.wav"
+          "src": "04_Frustrated_MSPAngry/ret/VADPT_LLMVAD_ret.wav"
         },
         {
           "name": "Text-Audio FFN",
           "type": "Prompt retrieval",
           "note": "Text/audio MLP retrieved prompt.",
           "file": "TextAudioFFN_ret.wav",
-          "src": "04_Exciting_MSPAngry/ret/TextAudioFFN_ret.wav"
+          "src": "04_Frustrated_MSPAngry/ret/TextAudioFFN_ret.wav"
         },
         {
           "name": "Text-Prompt Transformer",
           "type": "Prompt retrieval",
           "note": "Text-prompt transformer retrieved prompt.",
           "file": "TextPromptTF_ret.wav",
-          "src": "04_Exciting_MSPAngry/ret/TextPromptTF_ret.wav"
+          "src": "04_Frustrated_MSPAngry/ret/TextPromptTF_ret.wav"
         },
         {
           "name": "Random prompt",
           "type": "Lower bound",
           "note": "Random seed-42 retrieved prompt.",
           "file": "Random_ret.wav",
-          "src": "04_Exciting_MSPAngry/ret/Random_ret.wav"
+          "src": "04_Frustrated_MSPAngry/ret/Random_ret.wav"
         }
       ],
       "generation": [
@@ -501,84 +501,84 @@ window.EMOPILOT_MOS_DATA = {
           "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using LLM-VAD nearest retrieved emotion prompt.",
           "file": "LLM_VAD_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/LLM_VAD_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/LLM_VAD_gen.wav"
         },
         {
           "name": "VAD-Transformer Retrieval + IndexTTS2",
           "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using VAD-transformer retrieved emotion prompt.",
           "file": "VADPT_LLMVAD_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/VADPT_LLMVAD_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/VADPT_LLMVAD_gen.wav"
         },
         {
           "name": "Text-Audio FFN Retrieval + IndexTTS2",
           "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using Text-Audio FFN retrieved emotion prompt.",
           "file": "TextAudioFFN_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/TextAudioFFN_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/TextAudioFFN_gen.wav"
         },
         {
           "name": "Text-Prompt Transformer Retrieval + IndexTTS2",
           "type": "EmoPilot prompt retrieval mode",
           "note": "Generated speech using text-prompt transformer retrieved emotion prompt.",
           "file": "TextPromptTF_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/TextPromptTF_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/TextPromptTF_gen.wav"
         },
         {
           "name": "VAD-Transformer Direct + IndexTTS2",
           "type": "EmoPilot direct conditioning mode",
           "note": "Generated from VAD-transformer predicted emotion embedding.",
           "file": "VADPT_LLMVAD_Direct_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/VADPT_LLMVAD_Direct_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/VADPT_LLMVAD_Direct_gen.wav"
         },
         {
           "name": "Text-Prompt Transformer Direct + IndexTTS2",
           "type": "EmoPilot direct conditioning mode",
           "note": "Generated from text-prompt transformer predicted emotion embedding.",
           "file": "TextPromptTF_Direct_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/TextPromptTF_Direct_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/TextPromptTF_Direct_gen.wav"
         },
         {
           "name": "IndexTTS2-NoEmotion",
           "type": "No explicit emotion-cue baseline",
           "note": "Speaker prompt only; no explicit emotion cue.",
           "file": "IndexTTS2_SpeakerOnly_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/IndexTTS2_SpeakerOnly_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/IndexTTS2_SpeakerOnly_gen.wav"
         },
         {
           "name": "Qwen3-TTS-NoEmotion",
           "type": "No explicit emotion-cue baseline",
           "note": "External speaker-cloning baseline without explicit emotion cue.",
           "file": "Qwen3TTS_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/Qwen3TTS_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/Qwen3TTS_gen.wav"
         },
         {
           "name": "FishAudio2-NoEmotion",
           "type": "No explicit emotion-cue baseline",
           "note": "External speaker-cloning baseline without explicit emotion cue.",
           "file": "FishAudio2_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/FishAudio2_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/FishAudio2_gen.wav"
         },
         {
           "name": "Random Prompt + IndexTTS2",
           "type": "Lower bound",
           "note": "IndexTTS2 conditioned on random retrieved prompt.",
           "file": "Random_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/Random_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/Random_gen.wav"
         },
         {
           "name": "GT Emotion Prompt + IndexTTS2",
           "type": "Oracle cue upper bound",
           "note": "Uses paired GT audio as the emotion prompt.",
           "file": "IndexTTS2_GTReference_gen.wav",
-          "src": "04_Exciting_MSPAngry/gen/IndexTTS2_GTReference_gen.wav"
+          "src": "04_Frustrated_MSPAngry/gen/IndexTTS2_GTReference_gen.wav"
         }
       ],
       "audio0": {
         "name": "Audio0 speaker reference",
         "type": "Speaker reference",
         "note": "Source speaker prompt used to anchor speaker identity.",
-        "src": "04_Exciting_MSPAngry/Audio0.wav",
+        "src": "04_Frustrated_MSPAngry/Audio0.wav",
         "file": "Audio0.wav"
       }
     },
